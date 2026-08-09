@@ -61,7 +61,7 @@ export function RecentResources() {
       {data.map((r) => (
         <li
           key={r.id}
-          className="flex items-center justify-between gap-4 rounded-[20px] bg-lifted px-6 py-4 shadow-card"
+          className={"flex items-center justify-between gap-4  px-6 py-4 border-b border-gray-300"}
         >
           <span className="flex min-w-0 items-center gap-3">
             <span className="shrink-0 rounded-[10px] bg-white px-2 py-1 text-[10px] font-bold text-slate ring-1 ring-ink/10">

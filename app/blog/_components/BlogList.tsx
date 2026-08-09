@@ -62,42 +62,31 @@ export function BlogList({ posts }: { posts: PublicPostCard[] }) {
         </p>
       ) : (
         <>
-          <Reveal stagger className="mt-12 grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-5">
-            {visible.map((p) => (
-              <div key={p.slug} className="group relative">
-                <Link
-                  href={`/blog/${p.slug}`}
-                  className="flex items-center gap-5 rounded-[24px] bg-lifted p-4 shadow-card transition-transform hover:-translate-y-0.5 sm:p-5"
-                >
-                  {p.thumbnail ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={p.thumbnail}
-                      alt={p.title}
-                      className="h-24 w-24 shrink-0 rounded-[16px] object-cover sm:h-28 sm:w-28"
-                    />
-                  ) : (
-                    <div
-                      className="h-24 w-24 shrink-0 rounded-[16px] sm:h-28 sm:w-28"
-                      style={{
-                        background: `radial-gradient(circle at 35% 30%, ${p.tone.a}, ${p.tone.b})`,
-                      }}
-                    />
-                  )}
-                  <div className="flex min-w-0 flex-1 flex-col">
-                    <span className="text-[13px] font-medium text-signal">{p.category}</span>
-                    <h3 className="mt-1.5 line-clamp-2 text-[18px] font-medium leading-[1.35] tracking-[-0.01em] text-ink">
-                      {p.title}
-                    </h3>
-                    {p.excerpt && (
-                      <p className="mt-1.5 line-clamp-1 text-[14px] leading-[1.5] text-slate">
-                        {p.excerpt}
-                      </p>
-                    )}
-                    <span className="mt-2 text-[13px] text-slate/80">{p.date}</span>
+          <Reveal stagger className="mt-6 flex flex-col">
+            {visible.map((p, i) => (
+              <div
+                key={p.slug}
+                className="group relative grid grid-cols-[auto_1fr] gap-5 border-b border-ink/10 py-8 sm:gap-8"
+              >
+                <PostAdminActions id={p.id} className="absolute right-0 top-8 z-10" />
+
+                <span className="display pt-1 text-[22px] tabular-nums text-signal-light sm:text-[26px]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                <Link href={`/blog/${p.slug}`} className="flex flex-col pr-16 sm:pr-24">
+                  <div className="flex items-center gap-2 text-[12px] font-medium text-slate">
+                    <span>{p.category}</span>
+                    <span className="h-1 w-1 rounded-full bg-dust" />
+                    <span>{p.date}</span>
                   </div>
+                  <h2 className="display mt-1.5 text-[24px] leading-[1.15] sm:text-[30px]">{p.title}</h2>
+                  {p.excerpt && (
+                    <p className="mt-2 line-clamp-2 max-w-[70ch] text-[15px] leading-[1.5] text-slate">
+                      {p.excerpt}
+                    </p>
+                  )}
                 </Link>
-                <PostAdminActions id={p.id} className="absolute right-3 top-3" />
               </div>
             ))}
           </Reveal>

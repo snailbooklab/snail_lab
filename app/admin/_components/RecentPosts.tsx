@@ -34,11 +34,11 @@ export function RecentPosts() {
   }
 
   return (
-    <ul className="flex flex-col gap-2">
+    <ul className="flex flex-col ">
       {data.map((p) => (
         <li
           key={p.id}
-          className="flex items-center justify-between gap-4 rounded-[20px] bg-lifted px-6 py-4 shadow-card"
+          className={"flex items-center justify-between gap-4  px-6 py-4 border-b border-gray-300"}
         >
           <Link href={`/blog/${p.slug}`} className="group flex min-w-0 items-center gap-3">
             <span

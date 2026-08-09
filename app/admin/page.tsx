@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { Arrow, Eyebrow, Section } from "../_components/ui";
-import { RecentPosts } from "./_components/RecentPosts";
-import { RecentLectures } from "./_components/RecentLectures";
-import { RecentResources } from "./_components/RecentResources";
-import { RecentVibeStudents } from "./_components/RecentVibeStudents";
+import { AdminSections } from "./_components/AdminSections";
 import { SignOutButton } from "./_components/SignOutButton";
 import {getCurrentUser} from "./_actions/auth";
 import {supabaseServerAuth} from "@/app/_lib/supabase-server";
@@ -90,47 +87,7 @@ export default async function AdminHome() {
         ))}
       </div>
 
-      {/* 최근 글 — Supabase에서 TanStack Query로 로드 */}
-      <div className="mt-20">
-        <Eyebrow>블로그</Eyebrow>
-        <h2 className="display mt-5 text-[28px] leading-[1.05] sm:text-[36px]">작성한 글</h2>
-        <div className="mt-8">
-          <RecentPosts />
-        </div>
-      </div>
-
-      {/* 강의 목록 */}
-      <div className="mt-16">
-        <Eyebrow>강의</Eyebrow>
-        <h2 className="display mt-5 text-[28px] leading-[1.05] sm:text-[36px]">등록한 강의</h2>
-        <div className="mt-8">
-          <RecentLectures />
-        </div>
-      </div>
-
-      {/* 자료실 목록 */}
-      <div className="mt-16">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <Eyebrow>자료실</Eyebrow>
-            <h2 className="display mt-5 text-[28px] leading-[1.05] sm:text-[36px]">올린 자료</h2>
-          </div>
-        </div>
-        <div className="mt-8">
-          <RecentResources />
-        </div>
-      </div>
-
-      {/* 바이브 코딩 — 수강생 등록/발급 현황 */}
-      <div className="mt-16">
-        <Eyebrow>바이브 코딩</Eyebrow>
-        <h2 className="display mt-5 text-[28px] leading-[1.05] sm:text-[36px]">
-          수강생 등록 · 발급 현황
-        </h2>
-        <div className="mt-8">
-          <RecentVibeStudents />
-        </div>
-      </div>
+      <AdminSections />
     </Section>
   );
 }

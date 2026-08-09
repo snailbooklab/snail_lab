@@ -43,7 +43,7 @@ export function RecentLectures() {
       {data.map((l) => (
         <li
           key={l.id}
-          className="flex items-center justify-between gap-4 rounded-[20px] bg-lifted px-6 py-4 shadow-card"
+          className={"flex items-center justify-between gap-4  px-6 py-4 border-b border-gray-300"}
         >
           <span className="flex min-w-0 items-center gap-3">
             <span
