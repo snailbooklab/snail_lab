@@ -17,7 +17,7 @@ import {ThumbnailField} from "../../_components/ThumbnailField";
 import {categories} from "../../../_data/content";
 
 const CATS = categories.filter((c) => c !== "전체");
-const TONE = {a: "#f2933f", b: "#cf4500"};
+const TONE = {a: "var(--color-signal-light)", b: "var(--color-signal)"};
 const TODAY = "2026.07.22";
 
 // 강의 폼과 동일한 필드 스타일

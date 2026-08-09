@@ -1,14 +1,23 @@
 import type { Metadata } from "next";
-import { Sofia_Sans } from "next/font/google";
+import { Gothic_A1, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { Nav } from "./_components/nav";
 import { Footer } from "./_components/footer";
 import { Providers } from "./_lib/providers";
 import { SITE_NAME } from "./_lib/seo";
 
-const sofia = Sofia_Sans({
-  variable: "--font-sofia",
-  subsets: ["latin"],
+/* Body — clean, legible everywhere (marketing pages AND admin dashboards). */
+const notoSansKr = Noto_Sans_KR({
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-noto-sans-kr",
+  display: "swap",
+});
+
+/* Display — clean geometric sans, opted into via the `.display` class    */
+/* for headlines. Slightly rounder/bolder than the body font for hierarchy. */
+const gothicA1 = Gothic_A1({
+  weight: ["700", "800"],
+  variable: "--font-gothic-a1",
   display: "swap",
 });
 
@@ -50,7 +59,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ko" className={`${sofia.variable} h-full`}>
+    <html lang="ko" className={`${notoSansKr.variable} ${gothicA1.variable} h-full`}>
       <body className="min-h-full">
         <Providers>
           <Nav />

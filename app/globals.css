@@ -1,33 +1,36 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ */
-/*  Design tokens — "Mastercard editorial" system (see DESIGN.md)      */
+/*  Design tokens — "Forest editorial" system                          */
+/*  (2026 rebrand: warm paper + deep forest ink + single emerald       */
+/*  accent, replacing the earlier cream/rust "Mastercard" system)      */
 /* ------------------------------------------------------------------ */
 @theme {
   /* Surfaces */
-  --color-cream: #f3f0ee; /* Canvas — warm putty, never pure white */
-  --color-lifted: #fcfbfa; /* Lifted cream — paper on paper (거의 흰색) */
-  --color-bone: #f4f4f4;
-  --color-ghost: #e8e2da; /* cream-on-cream watermark text          */
+  --color-cream: #f5f4ef; /* Canvas — warm paper, never pure white */
+  --color-lifted: #fcfbf8; /* Lifted paper — paper on paper (거의 흰색) */
+  --color-bone: #f2f1ec;
+  --color-ghost: #e6e4dc; /* paper-on-paper watermark text          */
 
   /* Ink / text */
-  --color-ink: #141413; /* Warm near-black — CTAs, headlines        */
-  --color-charcoal: #262627;
-  --color-slate: #696969; /* muted secondary text                   */
-  --color-dust: #d1cdc7; /* whisper text                            */
+  --color-ink: #181a17; /* Deep forest near-black — CTAs, headlines */
+  --color-charcoal: #262723;
+  --color-slate: #6e6c63; /* muted secondary text                   */
+  --color-dust: #d2cfc6; /* whisper text                            */
 
   /* Accents (used sparingly) */
-  --color-signal: #cf4500; /* consent / legal only                  */
-  --color-signal-light: #f37338; /* orbital arcs, active indicators */
-  --color-clay: #9a3a0a;
+  --color-signal: #1f6f5c; /* primary accent — emerald               */
+  --color-signal-light: #2f9c81; /* orbital arcs, active indicators  */
+  --color-clay: #24352c; /* dark readable text on tinted accent bg  */
   --color-linkblue: #3860be;
 
-  /* Brand mark only */
+  /* Semantic — error/danger only, unrelated to the brand accent */
   --color-mc-red: #eb001b;
   --color-mc-yellow: #f79e1b;
 
-  /* Type */
-  --font-display: var(--font-sofia), "Sofia Sans", Arial, sans-serif;
+  /* Type — body everywhere, display opt-in via `.display` */
+  --font-body: var(--font-noto-sans-kr), "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+  --font-display: var(--font-gothic-a1), "Apple SD Gothic Neo", sans-serif;
 
   /* Radius scale — small / button / stadium / pill */
   --radius-btn: 20px;
@@ -48,16 +51,17 @@ html {
 body {
   background: var(--color-cream);
   color: var(--color-ink);
-  font-family: var(--font-display);
-  font-weight: 450; /* signature soft body weight */
+  font-family: var(--font-body);
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Headlines lock together with tight negative tracking */
+/* Headlines opt into the clean geometric display sans */
 .display {
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 /* Eyebrow — minimal editorial kicker: small orange label, no rule/dot */

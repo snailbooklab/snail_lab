@@ -9,12 +9,12 @@ export const fields = [
         eyebrow: "그림책",
         title: "그림책",
         desc: "그림책으로 아이의 마음을 읽고, 대화의 문을 여는 그림책 교육.",
-        tone: {a: "#f7b25a", b: "#b8420f"},
+        tone: {a: "#7acda8", b: "#2e8f6b"},
         /* 그림책에서 갈라져 나온 하위 분야 — 메인 필드 원 옆 위성 원으로 표시 */
         sub: {
             slug: "puppet-show",
             title: "인형극",
-            tone: {a: "#f2a25c", b: "#a8460f"},
+            tone: {a: "#86d2b4", b: "#3b9c7b"},
         },
     },
     {
@@ -22,7 +22,7 @@ export const fields = [
         eyebrow: "미디어 리터러시",
         title: "미디어 리터러시",
         desc: "미디어를 비판적으로 읽고, 아이와 함께 건강하게 사용하는 힘을 기릅니다.",
-        tone: {a: "#f2933f", b: "#cf4500"},
+        tone: {a: "#52b79a", b: "#1f6f5c"},
     },
 
     {
@@ -30,7 +30,7 @@ export const fields = [
         eyebrow: "심리치유",
         title: "마음 쉼터",
         desc: "그림책을 통한 마음근육 키우기.",
-        tone: {a: "#ef8a4c", b: "#9a3a0a"},
+        tone: {a: "#4fa98c", b: "#1c5c46"},
     },
 ] as const;
 
@@ -97,7 +97,7 @@ export const lectures = [
         level: "초등학생",
         mode: "오프라인",
         target: "아이의 미디어 사용이 걱정되는 부모와 교사",
-        tone: {a: "#f2933f", b: "#cf4500"},
+        tone: {a: "#52b79a", b: "#1f6f5c"},
         curriculum: [
             "미디어가 아이에게 미치는 영향(미디어 효과) 이해",
             "무작정 막기 대신 '함께 읽기'",
@@ -112,10 +112,10 @@ export const lectures = [
         level: "학부모 · 교사",
         mode: "오프라인",
         target: "그림책으로 아이와 더 깊이 소통하고 싶은 분",
-        tone: {a: "#f7b25a", b: "#b8420f"},
+        tone: {a: "#7acda8", b: "#2e8f6b"},
         curriculum: [
             "발달 단계에 맞는 그림책 고르기",
-            "잘 읽어주는 법 — 목소리와 호흡",
+            "잘 읽어주는 법: 목소리와 호흡",
             "그림책으로 감정을 이야기하기",
             "질문으로 생각을 넓히는 대화법",
             "우리 아이 그림책 서가 만들기",
@@ -127,7 +127,7 @@ export const lectures = [
         level: "학부모 · 교사",
         mode: "온라인",
         target: "아이의 행동 뒤 마음이 궁금한 분",
-        tone: {a: "#ef8a4c", b: "#9a3a0a"},
+        tone: {a: "#4fa98c", b: "#1c5c46"},
         curriculum: [
             "연령별 정서·인지 발달의 큰 그림",
             "떼쓰기·불안 행동의 진짜 이유",
@@ -145,7 +145,7 @@ export const posts = [
         category: "미디어 리터러시",
         date: "2026.07.10",
         excerpt: "무작정 막는 대신 아이와 미디어를 '함께 읽는' 세 가지 대화법. 미디어 리터러시는 통제가 아니라 대화에서 시작됩니다.",
-        tone: {a: "#f2933f", b: "#cf4500"},
+        tone: {a: "#52b79a", b: "#1f6f5c"},
         tags: ["미디어리터러시", "미디어효과", "대화법"],
     },
     {
@@ -153,8 +153,8 @@ export const posts = [
         title: "감정을 말로 못 하는 아이에게, 그림책이 하는 일",
         category: "그림책",
         date: "2026.06.28",
-        excerpt: "슬픔·화·질투 — 아직 이름 붙이기 어려운 감정을 그림책이 대신 말해줍니다. 감정을 여는 그림책 고르는 법.",
-        tone: {a: "#f7b25a", b: "#b8420f"},
+        excerpt: "슬픔·화·질투, 아직 이름 붙이기 어려운 감정을 그림책이 대신 말해줍니다. 감정을 여는 그림책 고르는 법.",
+        tone: {a: "#7acda8", b: "#2e8f6b"},
         tags: ["그림책", "정서발달", "감정"],
     },
     {
@@ -163,7 +163,7 @@ export const posts = [
         category: "아동심리",
         date: "2026.06.15",
         excerpt: "떼쓰기는 문제 행동이 아니라 서툰 신호입니다. 발달 관점에서 아이의 떼쓰기를 다시 읽어봅니다.",
-        tone: {a: "#ef8a4c", b: "#9a3a0a"},
+        tone: {a: "#4fa98c", b: "#1c5c46"},
         tags: ["아동심리", "발달", "훈육"],
     },
     {
@@ -172,7 +172,7 @@ export const posts = [
         category: "강의 소식",
         date: "2026.05.30",
         excerpt: "미디어 리터러시와 그림책 강좌가 새 커리큘럼으로 돌아옵니다. 도서관·학교 출강 신청도 함께 받습니다.",
-        tone: {a: "#f6a55b", b: "#c04310"},
+        tone: {a: "#62c0a0", b: "#227a5e"},
         tags: ["공지", "강좌", "출강"],
     },
 ];

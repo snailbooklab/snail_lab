@@ -1,10 +1,10 @@
 /* Small formatting helpers shared by the public page queries. */
 
 const TONES: { a: string; b: string }[] = [
-  { a: "#f2933f", b: "#cf4500" },
-  { a: "#f7b25a", b: "#b8420f" },
-  { a: "#ef8a4c", b: "#9a3a0a" },
-  { a: "#f6a55b", b: "#c04310" },
+  { a: "#52b79a", b: "#1f6f5c" },
+  { a: "#7acda8", b: "#2e8f6b" },
+  { a: "#4fa98c", b: "#1c5c46" },
+  { a: "#62c0a0", b: "#227a5e" },
 ];
 
 /** Deterministic warm tone from a slug, so cards look consistent per item. */

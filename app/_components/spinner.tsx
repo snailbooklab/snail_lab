@@ -1,5 +1,5 @@
 /**
- * Loading spinner — the snail's shell (the orange spiral from logo-symbol.svg)
+ * Loading spinner — the snail's shell (the spiral from logo-symbol.svg)
  * rotating on its own axis.
  */
 export function Spinner({
@@ -24,7 +24,7 @@ export function Spinner({
         <path
           d="M 81 42 A 26 26 0 1 1 29 42 A 19.5 19.5 0 1 1 68 42 A 13 13 0 1 1 42 42 A 6.5 6.5 0 1 1 55 42"
           fill="none"
-          stroke="#CF4500"
+          stroke="var(--color-signal)"
           strokeWidth="3"
           strokeLinecap="round"
         />

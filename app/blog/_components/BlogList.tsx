@@ -20,14 +20,15 @@ export function BlogList({ posts }: { posts: PublicPostCard[] }) {
       p.excerpt.toLowerCase().includes(q.toLowerCase());
     return inCat && inQ;
   });
+  const [featured, ...rest] = visible;
 
   return (
-    <Section className="pt-36 sm:pt-44">
+    <Section className="pt-32 sm:pt-40">
       <div className="flex items-start justify-between gap-4">
         <Eyebrow>블로그</Eyebrow>
         <NewPostButton />
       </div>
-      <h1 className="display mt-6 max-w-[20ch] text-[40px] leading-[1.02] sm:text-[60px]">
+      <h1 className="display mt-6 max-w-[20ch] text-[40px] leading-[1.05] sm:text-[58px]">
         강의 현장 기록.
       </h1>
 
@@ -40,7 +41,7 @@ export function BlogList({ posts }: { posts: PublicPostCard[] }) {
               onClick={() => setCat(c)}
               className={`rounded-pill px-5 py-2 text-[15px] font-medium transition-all ${
                 cat === c
-                  ? "bg-ink text-cream shadow-[0_6px_16px_rgba(20,20,19,0.18)]"
+                  ? "bg-ink text-cream shadow-[0_6px_16px_rgba(24,26,23,0.18)]"
                   : "bg-white text-slate shadow-[0_2px_8px_rgba(0,0,0,0.05)] hover:-translate-y-0.5 hover:text-ink"
               }`}
             >
@@ -57,45 +58,87 @@ export function BlogList({ posts }: { posts: PublicPostCard[] }) {
       </div>
 
       {posts.length === 0 ? (
-        <p className="mt-20 rounded-stadium bg-lifted p-10 text-center text-[17px] text-dust">
+        <p className="mt-20 rounded-[28px] bg-lifted p-10 text-center text-[17px] text-dust">
           아직 발행된 글이 없습니다.
         </p>
+      ) : visible.length === 0 ? (
+        <p className="mt-20 text-center text-[17px] text-dust">검색 결과가 없습니다.</p>
       ) : (
-        <>
-          <Reveal stagger className="mt-6 flex flex-col">
-            {visible.map((p, i) => (
-              <div
-                key={p.slug}
-                className="group relative grid grid-cols-[auto_1fr] gap-5 border-b border-ink/10 py-8 sm:gap-8"
-              >
-                <PostAdminActions id={p.id} className="absolute right-0 top-8 z-10" />
+        <Reveal stagger className="mt-10 grid grid-cols-1 gap-6">
+          {/* Featured — first result, full-width split card */}
+          <PostCard post={featured} index={0} featured />
 
-                <span className="display pt-1 text-[22px] tabular-nums text-signal-light sm:text-[26px]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-
-                <Link href={`/blog/${p.slug}`} className="flex flex-col pr-16 sm:pr-24">
-                  <div className="flex items-center gap-2 text-[12px] font-medium text-slate">
-                    <span>{p.category}</span>
-                    <span className="h-1 w-1 rounded-full bg-dust" />
-                    <span>{p.date}</span>
-                  </div>
-                  <h2 className="display mt-1.5 text-[24px] leading-[1.15] sm:text-[30px]">{p.title}</h2>
-                  {p.excerpt && (
-                    <p className="mt-2 line-clamp-2 max-w-[70ch] text-[15px] leading-[1.5] text-slate">
-                      {p.excerpt}
-                    </p>
-                  )}
-                </Link>
-              </div>
-            ))}
-          </Reveal>
-
-          {visible.length === 0 && (
-            <p className="mt-20 text-center text-[17px] text-dust">검색 결과가 없습니다.</p>
+          {rest.length > 0 && (
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+              {rest.map((p, i) => (
+                <PostCard key={p.slug} post={p} index={i + 1} />
+              ))}
+            </div>
           )}
-        </>
+        </Reveal>
       )}
     </Section>
+  );
+}
+
+function PostCard({
+  post: p,
+  index,
+  featured = false,
+}: {
+  post: PublicPostCard;
+  index: number;
+  featured?: boolean;
+}) {
+  return (
+    <div
+      className={`group relative flex overflow-hidden rounded-[28px] bg-lifted shadow-card ${
+        featured ? "flex-col sm:flex-row" : "flex-col"
+      }`}
+    >
+      <PostAdminActions id={p.id} className="absolute right-4 top-4 z-20" />
+
+      <Link
+        href={`/blog/${p.slug}`}
+        className={`relative shrink-0 overflow-hidden ${
+          featured ? "aspect-[16/9] sm:aspect-auto sm:w-[46%]" : "aspect-[4/3]"
+        }`}
+      >
+        {p.thumbnail ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={p.thumbnail}
+            alt={p.title}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          />
+        ) : (
+          <div
+            className="absolute inset-0"
+            style={{ background: `radial-gradient(circle at 35% 30%, ${p.tone.a}, ${p.tone.b})` }}
+          />
+        )}
+        <span className="display absolute bottom-4 left-5 text-[15px] tabular-nums text-white/90">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+      </Link>
+
+      <Link href={`/blog/${p.slug}`} className="flex flex-1 flex-col p-7 sm:p-8">
+        <div className="flex items-center gap-2 text-[12px] font-medium text-slate">
+          <span>{p.category}</span>
+          <span className="h-1 w-1 rounded-full bg-dust" />
+          <span>{p.date}</span>
+        </div>
+        <h2
+          className={`display mt-1.5 leading-[1.15] ${featured ? "text-[26px] sm:text-[30px]" : "text-[20px]"}`}
+        >
+          {p.title}
+        </h2>
+        {p.excerpt && (
+          <p className="mt-2 line-clamp-2 max-w-[60ch] flex-1 text-[15px] leading-[1.5] text-slate">
+            {p.excerpt}
+          </p>
+        )}
+      </Link>
+    </div>
   );
 }
