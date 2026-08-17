@@ -6,7 +6,6 @@ const COLS = [
   {
     head: "둘러보기",
     links: [
-      { label: "강사 소개", href: "/about" },
       { label: "강의 소개", href: "/lectures" },
       { label: "블로그", href: "/blog" },
       { label: "문의하기", href: "/contact" },

@@ -28,20 +28,15 @@ export default async function Home() {
                         <h1 className="display mt-6 max-w-[15ch] text-[40px] leading-[1.15] sm:text-[58px]">
                             <span className="text-signal">그림책</span>을 품다,
                             <br />
-                            <span className="text-signal">미디어</span>로 잇다.
+                            <span className="text-signal">미디어</span>로 잇다,
+                            <br />
+                            <span className="text-signal">마음</span>으로 담다.
                         </h1>
                         <p className="mt-7 max-w-[46ch] text-[17px] leading-[1.65] text-slate">
                             아이의 순수한 시선부터 어르신의 삶의 지혜까지. 그림책으로 시작해
                             미디어로 완성되는 세대공감 플랫폼.
                         </p>
                         <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
-                            <Link
-                                href="/about"
-                                className="group inline-flex items-center gap-1.5 text-[16px] font-medium tracking-[-0.01em] text-ink transition-colors"
-                            >
-                                강사 소개
-                                <Arrow className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                            </Link>
                             <Link
                                 href="/lectures"
                                 className="group inline-flex items-center gap-1.5 text-[16px] font-medium tracking-[-0.01em] text-signal transition-colors"
@@ -64,12 +59,12 @@ export default async function Home() {
                             </span>
 
                             <BrandMark
-                                ringLabel="달팽이 그림책연구소 · 최미선 강사 · 그림책 · 미디어 리터러시 · 아동심리 · "
+                                ringLabel="달팽이 마음 뜰 · 최미선 강사 · 그림책 · 미디어 리터러시 · 아동심리 · "
                                 accent="var(--color-signal)"
                                 size={430}
                             >
                                 <Portrait
-                                    href="/about"
+                                    satellite={false}
                                     toneA="var(--color-signal-light)"
                                     toneB="var(--color-signal)"
                                     size={320}
@@ -91,7 +86,7 @@ export default async function Home() {
 
                             <div className="mt-6 text-center">
                                 <p className="display text-[19px] text-ink">최미선</p>
-                                <p className="mt-1 text-[13px] text-slate">달팽이 그림책연구소 대표</p>
+                                <p className="mt-1 text-[13px] text-slate">달팽이 마음 뜰 대표</p>
                             </div>
                         </div>
                     </div>
@@ -99,16 +94,16 @@ export default async function Home() {
             </Section>
 
             {/* ---------------------------------------------------------- */}
-            {/*  강의 분야 — asymmetric bento (photo / solid / paper cell)  */}
+            {/*  마음뜰 소개 — asymmetric bento (photo / solid / paper cell)  */}
             {/* ---------------------------------------------------------- */}
             <Section className="pt-28 sm:pt-40">
                 <Reveal>
                     <span className="inline-flex items-center text-[13px] font-medium tracking-[0.02em] text-signal">
-                        강의 분야
+                        마음뜰 소개
                     </span>
                     <p className="mt-4 max-w-[46ch] text-[17px] leading-[1.6] text-slate">
-                        세 가지 축으로 아이와 미디어, 그리고 마음을 다룹니다. 카드를 눌러
-                        커리큘럼을 확인하세요.
+                        달팽이는 느리게 움직이지만 결코 멈추지 않습니다. 달팽이 마음 뜰은
+                        저마다의 속도를 존중하며, 함께 가겠습니다.
                     </p>
                 </Reveal>
 

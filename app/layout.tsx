@@ -22,7 +22,7 @@ const gothicA1 = Gothic_A1({
 });
 
 const SITE_DESC =
-  "달팽이 그림책 연구소. 미디어 리터러시 · 그림책 · 아동심리학으로 아이와 미디어 사이 건강한 거리를 만드는 학부모·교사·기관 대상 교육.";
+  "달팽이 마음 뜰. 미디어 리터러시 · 그림책 · 아동심리학으로 아이와 미디어 사이 건강한 거리를 만드는 학부모·교사·기관 대상 교육.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   description: SITE_DESC,
   keywords: [
-    "달팽이 그림책 연구소",
+    "달팽이 마음 뜰",
     "미디어 리터러시",
     "그림책",
     "아동심리",

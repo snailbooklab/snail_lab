@@ -27,7 +27,7 @@ export function Nav() {
           <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
             <Image
               src="/logo-symbol.svg"
-              alt="달팽이 그림책 연구소"
+              alt="달팽이 마음 뜰"
               width={56}
               height={56}
               priority
@@ -35,7 +35,7 @@ export function Nav() {
             />
             <span className="flex flex-col leading-none">
               <span className="text-[16px] font-medium tracking-[-0.02em] text-ink">
-                달팽이 그림책 연구소
+                달팽이 마음 뜰
               </span>
               <span className="mt-1 flex items-center gap-1 text-[9px] font-bold tracking-[0.18em] text-slate">
                 <span className="h-1 w-1 rounded-full bg-signal" />

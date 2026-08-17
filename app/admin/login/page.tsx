@@ -49,7 +49,7 @@ function LoginForm() {
         <Eyebrow>관리자</Eyebrow>
         <h1 className="display mt-5 text-[34px] leading-[1.05] sm:text-[44px]">로그인</h1>
         <p className="mt-4 text-[16px] leading-[1.5] text-slate">
-          달팽이 그림책 연구소 관리자만 접근할 수 있습니다.
+          달팽이 마음 뜰 관리자만 접근할 수 있습니다.
         </p>
 
         <form onSubmit={onSubmit} className="mt-10 flex flex-col gap-4">

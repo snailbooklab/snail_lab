@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const SITE_NAME = "달팽이 그림책 연구소";
+export const SITE_NAME = "달팽이 마음 뜰";
 
 /**
  * openGraph/twitter는 상위 세그먼트 것과 얕은 병합(shallow merge)이라 페이지에서 정의하면
